@@ -1,0 +1,12 @@
+Zend Acl Module, which enables the users, user groups, and allows you to assign the access to different controllers and their actions based on their group.
+It automatically fetches all actions in all controllers present in your controller and module controller directory, and lists all of them in the configuration screen.
+It needs a column 'role_id' in your Zend_Auth.
+
+Use the flush action in the controller to cache all the actions/controllers of your application
+
+- app/modules/acl
+Contains the module controller class
+- library/Acl
+Contains the logic of the module
+- zend-acl-dump.sql
+Contains the structure of the tables needed for the module to run.

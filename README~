@@ -1,0 +1,8 @@
+Zend Acl Module, which enables the users, user groups, and allows you to assign the access to different controllers and their actions based on their group.
+It automatically fetches all actions in all controllers present in your controller and module controller directory, and lists all of them in the configuration screen.
+
+- app/modules/acl
+Contains the module controller class
+- library/Acl
+Contains the logic of the module
+

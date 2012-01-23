@@ -1,0 +1,48 @@
+
+      
+<div style="float:right;margin: 10px 0;">
+<?php if($this->allowed('create')): ?>
+   <a href="<?php 
+      echo $this->urlaction('create'); 
+      ?>" class="uibutton large">New Role</a>
+<?php endif; ?>
+<?php if($this->allowed('flush-cache')): ?>
+   <a href="<?php 
+      echo $this->urlaction('flush-cache'); 
+      ?>" class="uibutton large">Flush the permission cache</a>
+<?php endif; ?>
+</div>     
+<table>
+  <thead>
+    <tr>
+      <th class="tleft">Role name</th>
+      <th class="tleft">Role desc</th>
+      <?php if ($this->allowed('delete')): ?>
+      <th class="tleft">Delete this item</th>
+      <?php endif; ?>
+    </tr>
+  </thead>
+
+  <tbody>
+  <?php foreach($this->entities as $r) { ?>
+  <tr>
+  <td class="tleft">
+  <?php if($this->allowed('edit')): ?>
+    <a href="<?php echo $this->url(array('id'=>$r->id, 'action' => 'edit')); ?>">
+  <?php endif; ?>
+  <?php echo $r->role_name; ?>
+  <?php if($this->allowed('edit')): ?>
+    </a>
+  <?php endif; ?>
+  </td>
+  <td class="tleft"><?php echo $r->role_desc; ?></td>
+  <?php if ($this->allowed('delete')): ?>
+  <td class="tleft"><a href="<?php
+       echo $this->url(array('id'=>$r->id, 'action' => 'delete')); 
+    ?>">Delete</a>
+  </td>
+  <?php endif; ?>
+  </tr>
+  <?php } ?>
+  </tbody>
+</table>
